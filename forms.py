@@ -13,3 +13,7 @@ class RegForm(FlaskForm):
 class LoginForm(FlaskForm):
     username = StringField('Enter Username', validators=[InputRequired()])
     password = PasswordField('Enter Password', validators=[InputRequired()])
+
+
+class DeleteForm(FlaskForm):
+    """Something goes in here I guess"""
