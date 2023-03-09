@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Register</h1>
+
+    <form method="'POST">
+        {{form.hidden_tag()}}
+
+        {% for item in form  if item.widget.input_type != 'hidden' %}
+            <div>{{item.label}}{{item}}</div>
+        {% endfor %}
+        <button>Register!</button>
+    </form>
+{% endblock %}

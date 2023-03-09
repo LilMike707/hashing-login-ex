@@ -74,7 +74,7 @@ def show_user(username):
     return render_template('show_user.html', user=user, form=form)
 
 
-@app.route('users/<username>/delete', methods=['POST'])
+@app.route('/users/<username>/delete', methods=['POST'])
 def remove_user(username):
     if "username" not in session or username != session['username']:
         return redirect('/login')
