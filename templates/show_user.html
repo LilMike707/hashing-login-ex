@@ -1,5 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+    <ul>
+        {% for feedback in user.feedback %}
+            <li>
+                <b>{{feedback.title}}</b><br>
+                {{feedback.content}}
+            </li>
+            <form>
+                {{ form.hidden_tag() }}
+                <button formmethod="GET" formaction="/feedback/{{feedback.id}}/update">Edit</button>
+                <button formmethod="POST" formaction="/feedback/{{feedback.id/delete}}">Delete</button>
+            </form>
+        {% endfor %}
+    </ul>
+
+    <p>
+        <a href="/users/{{user.username}}/feedback/new">Add Feedback</a>
+    </p>
+    <form>
+    <button formmethod="POST" formaction="'/users/{{user.username}}/delete">Delete User</button>
+    </form>
 {% endblock %}
